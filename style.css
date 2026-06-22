@@ -1,0 +1,268 @@
+:root {
+  --bg:           #ffffff;
+  --bg-card:      #f5f6fa;
+  --border:       #e2e5ef;
+  --accent:       #5b8dee;
+  --accent-hover: #6f9ef0;
+  --text:         #1a1d2e;
+  --text-muted:   #5a6080;
+  --text-hint:    #9ba3bf;
+  --radius-sm:    6px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* ── HEADER ── */
+header {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+header img {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin: 0 auto 0.9rem;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+  letter-spacing: -0.02em;
+}
+
+header div p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ── CARD ── */
+main {
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem 2rem 1.75rem;
+  margin-bottom: 1rem;
+}
+
+/* ── FORM ── */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── LABELS ── */
+label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-top: 14px;
+  margin-bottom: 5px;
+  letter-spacing: 0.02em;
+}
+
+form > label:first-child { margin-top: 0; }
+
+/* ── INPUTS ── */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  height: 40px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 0.875rem;
+  padding: 0 12px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+  color: var(--text-hint);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(91, 141, 238, 0.15);
+}
+
+/* ── DIVS (label + input wrappers) ── */
+form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+form > div label { margin-top: 14px; }
+
+/* ── CHECKBOX ROW ── */
+form > div > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  accent-color: var(--accent);
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+input[type="checkbox"] + label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-top: 0;
+  line-height: 1.5;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+/* ── SUBMIT BUTTON ── */
+button[type="submit"] {
+  width: 100%;
+  height: 42px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 18px rgba(91, 141, 238, 0.28);
+  margin-bottom: 1.25rem;
+}
+
+button[type="submit"]:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 6px 22px rgba(91, 141, 238, 0.4);
+  transform: translateY(-1px);
+}
+
+button[type="submit"]:active { transform: translateY(0); }
+
+/* ── DIVIDER ── */
+.divider,
+form > div:nth-last-child(2) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0 1rem;
+}
+
+form > div:nth-last-child(2) hr,
+.divider hr {
+  flex: 1;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+form > div:nth-last-child(2) span,
+.divider span {
+  font-size: 0.75rem;
+  color: var(--text-hint);
+  white-space: nowrap;
+}
+
+/* ── SOCIAL BUTTONS ── */
+form > div:last-child {
+  flex-direction: row;
+  gap: 10px;
+}
+
+form > div:last-child a {
+  flex: 1;
+  height: 40px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+form > div:last-child a:hover {
+  background: var(--border);
+  border-color: var(--text-muted);
+  text-decoration: none;
+}
+
+/* ── FOOTER ── */
+footer {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  padding: 0.5rem 0;
+}
+
+footer a {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 480px) {
+  main { padding: 1.5rem 1.25rem; }
+  button[type="submit"] { font-size: 0.85rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
