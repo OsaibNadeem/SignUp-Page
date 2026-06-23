@@ -114,7 +114,7 @@ input[type="password"] {
   padding: 0 12px;
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
-  -webkit-appearance: none;
+  -webkit-app: none;
 }
 
 input[type="text"]::placeholder,
